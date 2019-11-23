@@ -1,0 +1,211 @@
+function exportFile(data) {
+    return `
+   
+   
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <title>Document</title>
+        <style>
+        body{
+     
+          background-color: gray;
+          font-family: "Times New Roman", Times, serif;
+        }
+        .parent {
+            position: relative;
+            width: 100%;
+             
+            height: 400px;
+            background-color: #243665;
+          }
+          
+          .child {
+            position: absolute;
+            top: 100px;
+            width: 80%;
+            padding: 20px;
+            border: 4px solid #8BD8BD;
+             
+            right: 140px;
+            border-radius: 1%;
+             
+            background-color: #8BD8BD;
+          }
+          
+          .twins {
+            border: 5px solid yellow;
+            background-color: white;
+            position: absolute;
+            margin-left: 35%;
+            border-radius: 50%;
+            height: 250px;
+            width: 30%;
+            padding: 1em;
+            
+            margin-top: 30px;
+            top: 0;
+            text-align: center;
+          }
+        
+          #nav {
+             
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+          }
+          
+          #nav li {
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+          }
+          #mainbody{
+             
+            width: 100%;
+            margin-top: 130px;
+            text-align: center;
+             
+            padding: 30px;
+          }
+        
+          
+          #first{
+            
+               text-align: center;
+              margin-top: 170px;
+          }
+        
+          #rowfirst{
+                
+              margin-top:  20px;
+          }
+        
+          #box1{
+              background-color: #8BD8BD;
+              text-align: center;
+              margin-bottom: 15px;
+              margin-left: 0px;
+              
+              float: right;
+          }
+        
+          #box2{
+            background-color: #8BD8BD;
+            text-align: center;
+            margin-bottom: 15px;
+            margin-left: 0px;
+             
+            float: right;
+        }
+        #box3{
+            background-color: #8BD8BD;
+            margin-top: 15px;
+            text-align: center;
+            text-align: center;
+        }
+        
+        #box4{
+            background-color: #8BD8BD;
+            margin-top: 15px;
+            text-align: center;
+            text-align: center;
+        }
+        
+        .footer{
+            margin-top: 50px;
+            height: 250px;
+            background-color: #243665;
+            border: 1px solid black;
+        }
+  
+  
+        </style>
+    </head>
+    
+    <body>
+    
+        <div class="parent">
+    
+            <div class="child">
+    
+                <div class="container" id="first">
+                    <h1>Hi!</h1>
+                    <h2>My name is Meysam NajafiTavani </h2>
+                    <p> ${data.userBio} </p>
+                    <ul class="container" id="nav">
+                        <li><a href="${data.location}" target="_blank"><img
+                                    src="https://img.icons8.com/dusk/64/000000/worldwide-location.png">${data.location} </a></li>
+                        <li><a href="${data.gitProfile}" target="_blank"><img
+                                    src="https://img.icons8.com/ios-filled/50/000000/github-2.png">GitHub</a></li>
+                        <li> <a href="${data.userBlog}" target="_blank"><img
+                                    src="https://img.icons8.com/office/50/000000/rss.png">Blog</a></li>
+                    </ul>
+    
+    
+                </div>
+    
+            </div>
+               
+             <img class="twins" src="${data.img}">
+            
+    
+        </div>
+        <div class="container" id="mainbody">
+                <h1 >I am trying to learn Node.js.</h1>
+        </div>
+        
+    
+        <div class=" row" id="rowfirst">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-2 border" id="box1">
+                <h1><b>Public Repositories</b></h1>
+                <h1>${data.repoNum} </h1>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2 border" id="box2">
+                <h1><b> Followers</b></h1>
+                <h1>${data.followers} </h1>
+            </div>
+            <div class="col-lg-2"></div>
+    
+        </div>
+    
+        <div class=" row" id="rowsecond">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-2 border" id="box3">
+                <h1><b>GitHub Stars</b> </h1>
+                <h1>${data.starNum} </h1>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2 border" id="box3">
+                <h1><b>Following</b></h1>
+                <h1> ${data.following}</h1>
+            </div>
+            <div class="col-lg-2"></div>
+    
+        </div>
+    
+    
+        <footer class="footer">
+            <a href="https://icons8.com/icon/43210/location">Location icon by Icons8</a> </footer>
+    
+    
+        <script src="index.js"></script>
+    </body>
+    
+    </html>`;
+  }
