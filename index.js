@@ -3,9 +3,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-
 const expotfile = require("./exportFile");
-
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function rendergithubURL() {
@@ -18,8 +16,8 @@ function rendergithubURL() {
       }
     ])
     .then(function ({ username }) {
-       //const config = { headers: { accept: "application/json" } };
-      let queryUrl = ` https://api.github.com/users/${username}`;
+       
+      let queryUrl = `https://api.github.com/users/${username}`;
       return axios.get(queryUrl ).then(userinformation => {
         let queryurlnew = `https://api.github.com/users/${username}/starred`;
 
@@ -46,11 +44,12 @@ function rendergithubURL() {
 rendergithubURL();
 // creat call back function to create HTML file 
   const writeHTMLfile =  expotfile => {
+    // create HTML file
   writeFileAsync("index.html", expotfile);
 
 }
 
-
+//  function to create PDF file
 async function createPdf(username) {
   
     console.log("true");
