@@ -32,6 +32,7 @@ function rendergithubURL() {
 
           };
           // call function 
+          console.log(data);
           expotfile(data);
           createhtml(expotfile(data));
           createPdf(username);
@@ -48,9 +49,10 @@ const createhtml = expotfile => {
     if (err) {
       throw err;
     }
-    console.log("You successfully create HTML well done!");
-    console.log(data);
+ 
   });
+  console.log("You successfully create HTML well done!");
+  
 
 }
 
