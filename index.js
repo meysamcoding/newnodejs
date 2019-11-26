@@ -33,7 +33,7 @@ function rendergithubURL() {
           };
           // call function 
           expotfile(data);
-          writeHTMLfile(expotfile(data));
+          createhtml(expotfile(data));
           createPdf(username);
 
 
@@ -43,9 +43,14 @@ function rendergithubURL() {
 }
 rendergithubURL();
 // creat call back function to create HTML file 
-  const writeHTMLfile =  expotfile => {
-    // create HTML file
-  writeFileAsync("index.html", expotfile);
+const createhtml = expotfile => {
+  writeFileAsync("index.html", expotfile, err => {
+    if (err) {
+      throw err;
+    }
+    console.log("You successfully create HTML well done!");
+    console.log(data);
+  });
 
 }
 
